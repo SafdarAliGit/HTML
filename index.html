@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="result">0</div>
+<br>
+<input type="button" name="increament" id="increament" value="++">
+<input type="button" name="decreament" id="decreament" value="--">
+<input type="button" name="reset" id="reset" value="Washout">
+
+<script>
+let counter = 0;
+const increament = document.getElementById("increament");
+const decreament = document.getElementById("decreament");
+const reset = document.getElementById("reset");
+const result = document.getElementById("result");
+
+increament.addEventListener("click", increament_counter);
+decreament.addEventListener("click",decreament_counter);
+reset.addEventListener("click",reset_counter);
+
+setInterval(increament_counter, 1000);
+
+function increament_counter(){
+   counter ++;
+   result.innerText = counter;
+   console.log(counter);
+   if(counter >10){
+    reset_counter();
+   }
+}
+function decreament_counter(){
+counter --;
+result.innerText = counter;
+}
+function reset_counter(){
+counter = 0;
+result.innerText = counter;
+
+
+
+}
+</script>    
+</body>
+</html>
