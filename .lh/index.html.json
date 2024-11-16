@@ -1,0 +1,98 @@
+{
+    "sourceFile": "index.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 20,
+            "patches": [
+                {
+                    "date": 1731555879785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1731555947769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,11 +7,11 @@\n </head>\n <body>\n <div id=\"result\"></div>\n <br>\n-<input type=\"button\" name=\"increament\" id=\"increament\">\n-<input type=\"button\" name=\"decreament\" id=\"decreament\">\n-<input type=\"button\" name=\"reset\" id=\"reset\">\n+<input type=\"button\" name=\"increament\" id=\"increament\" value=\"+\">\n+<input type=\"button\" name=\"decreament\" id=\"decreament\" value=\"-\">\n+<input type=\"button\" name=\"reset\" id=\"reset\" value=\"Reset\">\n \n <script>\n let counter = 0;\n const increament = document.getElementById(\"increament\");\n"
+                },
+                {
+                    "date": 1731555963505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>Document</title>\n </head>\n <body>\n-<div id=\"result\"></div>\n+<div id=\"result\">0</div>\n <br>\n <input type=\"button\" name=\"increament\" id=\"increament\" value=\"+\">\n <input type=\"button\" name=\"decreament\" id=\"decreament\" value=\"-\">\n <input type=\"button\" name=\"reset\" id=\"reset\" value=\"Reset\">\n"
+                },
+                {
+                    "date": 1731556008676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,10 @@\n const decreament = document.getElementById(\"decreament\");\n const reset = document.getElementById(\"reset\");\n const result = document.getElementById(\"result\");\n \n-increament.addEventListener(\"click\", increament);\n-decreament.addEventListener(\"click\",decreament);\n+increament.addEventListener(\"click\", increament_counter);\n+decreament.addEventListener(\"click\",decreament_counter);\n reset.addEventListener(\"click\",reset_counter);\n function increament_counter(){\n    counter ++;\n    result.innerText = counter;\n"
+                },
+                {
+                    "date": 1731556380957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n </head>\n <body>\n <div id=\"result\">0</div>\n <br>\n-<input type=\"button\" name=\"increament\" id=\"increament\" value=\"+\">\n+<input type=\"button\" name=\"increament\" id=\"increament\" value=\"++\">\n <input type=\"button\" name=\"decreament\" id=\"decreament\" value=\"-\">\n <input type=\"button\" name=\"reset\" id=\"reset\" value=\"Reset\">\n \n <script>\n"
+                },
+                {
+                    "date": 1731556389190,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n <body>\n <div id=\"result\">0</div>\n <br>\n <input type=\"button\" name=\"increament\" id=\"increament\" value=\"++\">\n-<input type=\"button\" name=\"decreament\" id=\"decreament\" value=\"-\">\n+<input type=\"button\" name=\"decreament\" id=\"decreament\" value=\"--\">\n <input type=\"button\" name=\"reset\" id=\"reset\" value=\"Reset\">\n \n <script>\n let counter = 0;\n"
+                },
+                {
+                    "date": 1731556425783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n <div id=\"result\">0</div>\n <br>\n <input type=\"button\" name=\"increament\" id=\"increament\" value=\"++\">\n <input type=\"button\" name=\"decreament\" id=\"decreament\" value=\"--\">\n-<input type=\"button\" name=\"reset\" id=\"reset\" value=\"Reset\">\n+<input type=\"button\" name=\"reset\" id=\"reset\" value=\"Washout\">\n \n <script>\n let counter = 0;\n const increament = document.getElementById(\"increament\");\n"
+                },
+                {
+                    "date": 1731556860374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,9 @@\n reset.addEventListener(\"click\",reset_counter);\n function increament_counter(){\n    counter ++;\n    result.innerText = counter;\n+   console.log(counter);\n }\n function decreament_counter(){\n counter --;\n result.innerText = counter;\n"
+                },
+                {
+                    "date": 1731556889280,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n reset.addEventListener(\"click\",reset_counter);\n function increament_counter(){\n    counter ++;\n    result.innerText = counter;\n-   console.log(counter);\n+   console.log(\"counter vlaue is : \" + counter);\n }\n function decreament_counter(){\n counter --;\n result.innerText = counter;\n"
+                },
+                {
+                    "date": 1731556913019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,8 @@\n reset.addEventListener(\"click\",reset_counter);\n function increament_counter(){\n    counter ++;\n    result.innerText = counter;\n-   console.log(\"counter vlaue is : \" + counter);\n }\n function decreament_counter(){\n counter --;\n result.innerText = counter;\n"
+                },
+                {
+                    "date": 1731557049747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,10 @@\n }\n function reset_counter(){\n counter = 0;\n result.innerText = counter;\n+\n+setInterval(increament_counter, 1000);\n }\n </script>    \n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1731557212761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,13 @@\n function reset_counter(){\n counter = 0;\n result.innerText = counter;\n \n-setInterval(increament_counter, 1000);\n+setInterval(function() {\n+    console.log(\"Counter incremented\");\n+    increament_counter();\n+}, 1000);\n+\n }\n </script>    \n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1731557263972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,10 +34,10 @@\n counter = 0;\n result.innerText = counter;\n \n setInterval(function() {\n-    console.log(\"Counter incremented\");\n-    increament_counter();\n+    counter ++;\n+   result.innerText = counter;\n }, 1000);\n \n }\n </script>    \n"
+                },
+                {
+                    "date": 1731557291555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,10 +34,9 @@\n counter = 0;\n result.innerText = counter;\n \n setInterval(function() {\n-    counter ++;\n-   result.innerText = counter;\n+    console.log(\"hi\");\n }, 1000);\n \n }\n </script>    \n"
+                },
+                {
+                    "date": 1731557435859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,13 @@\n \n increament.addEventListener(\"click\", increament_counter);\n decreament.addEventListener(\"click\",decreament_counter);\n reset.addEventListener(\"click\",reset_counter);\n+\n+setInterval(function() {\n+    console.log(\"hi\");\n+}, 1000);\n+\n function increament_counter(){\n    counter ++;\n    result.innerText = counter;\n }\n@@ -33,12 +38,10 @@\n function reset_counter(){\n counter = 0;\n result.innerText = counter;\n \n-setInterval(function() {\n-    console.log(\"hi\");\n-}, 1000);\n \n+\n }\n </script>    \n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1731557460673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n decreament.addEventListener(\"click\",decreament_counter);\n reset.addEventListener(\"click\",reset_counter);\n \n setInterval(function() {\n-    console.log(\"hi\");\n+    increament_counter;\n }, 1000);\n \n function increament_counter(){\n    counter ++;\n"
+                },
+                {
+                    "date": 1731557475966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n decreament.addEventListener(\"click\",decreament_counter);\n reset.addEventListener(\"click\",reset_counter);\n \n setInterval(function() {\n-    increament_counter;\n+    increament_counter();\n }, 1000);\n \n function increament_counter(){\n    counter ++;\n"
+                },
+                {
+                    "date": 1731557525094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,11 +22,9 @@\n increament.addEventListener(\"click\", increament_counter);\n decreament.addEventListener(\"click\",decreament_counter);\n reset.addEventListener(\"click\",reset_counter);\n \n-setInterval(function() {\n-    increament_counter();\n-}, 1000);\n+setInterval(increament_counter, 1000);\n \n function increament_counter(){\n    counter ++;\n    result.innerText = counter;\n"
+                },
+                {
+                    "date": 1731557647426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,11 @@\n \n function increament_counter(){\n    counter ++;\n    result.innerText = counter;\n+   if(counter >=10){\n+    reset_counter();\n+   }\n }\n function decreament_counter(){\n counter --;\n result.innerText = counter;\n"
+                },
+                {
+                    "date": 1731557691043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n \n function increament_counter(){\n    counter ++;\n    result.innerText = counter;\n-   if(counter >=10){\n+   if(counter >10){\n     reset_counter();\n    }\n }\n function decreament_counter(){\n"
+                },
+                {
+                    "date": 1731557771443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,9 @@\n \n function increament_counter(){\n    counter ++;\n    result.innerText = counter;\n+   console.log(counter);\n    if(counter >10){\n     reset_counter();\n    }\n }\n"
+                }
+            ],
+            "date": 1731555879785,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n</head>\n<body>\n<div id=\"result\"></div>\n<br>\n<input type=\"button\" name=\"increament\" id=\"increament\">\n<input type=\"button\" name=\"decreament\" id=\"decreament\">\n<input type=\"button\" name=\"reset\" id=\"reset\">\n\n<script>\nlet counter = 0;\nconst increament = document.getElementById(\"increament\");\nconst decreament = document.getElementById(\"decreament\");\nconst reset = document.getElementById(\"reset\");\nconst result = document.getElementById(\"result\");\n\nincreament.addEventListener(\"click\", increament);\ndecreament.addEventListener(\"click\",decreament);\nreset.addEventListener(\"click\",reset_counter);\nfunction increament_counter(){\n   counter ++;\n   result.innerText = counter;\n}\nfunction decreament_counter(){\ncounter --;\nresult.innerText = counter;\n}\nfunction reset_counter(){\ncounter = 0;\nresult.innerText = counter;\n}\n</script>    \n</body>\n</html>"
+        }
+    ]
+}
